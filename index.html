@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Vivekanandan A.K – Materials Scientist</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #1a237e;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 38px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    nav {
+      background: #283593;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1a237e;
+      margin-top: 0;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a237e;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Dr. Vivekanandan A.K</h1>
+    <p>Materials Scientist · Nanowire Fabrication · AAO · HEA · Electrochemical Sensors<br>
+    Postdoctoral Research Fellow · National Tsing Hua University, Taiwan</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Postdoctoral Research Fellow in the Department of Materials Science at
+      National Tsing Hua University (NTHU), Taiwan. My expertise lies in AAO-templated
+      nanowire fabrication, Zn/ZnO oxidation mechanisms, electrochemical sensing systems,
+      and high-entropy alloy processing using die-casting and DLP additive manufacturing.
+    </p>
+    <p>
+      With a dual background in Aeronautical Engineering (B.E., M.Tech) and a Ph.D.
+      in Mechanical Engineering (Nanomaterials), my research bridges advanced materials
+      science with aerospace and industrial applications. I have published multiple
+      high-impact articles in journals such as <em>Chemosphere</em>, <em>Ultrasonics Sonochemistry</em>,
+      <em>ACS Sustainable Chemistry & Engineering</em>, and <em>Journal of Alloys and Compounds</em>.
+    </p>
+  </section>
+
+  <section id="research">
+    <h2>Research Areas</h2>
+    <ul>
+      <li>AAO Template-Assisted Nanowire Fabrication</li>
+      <li>Zn/ZnO Nanowire Thermal Oxidation Mechanisms</li>
+      <li>High Entropy Alloys & DLP-Based Sintering</li>
+      <li>Electrochemical Sensors for Agrochemical Detection</li>
+      <li>SEM/TEM/XRD Structural Characterization</li>
+      <li>Aircraft Structures & Composite Materials</li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>All Publications</h2>
+    <ul>
+      <li><strong>2025</strong> – High-performance electrochemical sensors with SnBi₂O₃/Graphene oxide nanocomposite for selective antibiotic detection. <em>Journal of the Taiwan Institute of Chemical Engineers</em>, 171, 106033.</li>
+
+      <li><strong>2024</strong> – Progress and Perspective in harnessing MXene–carbon-based composites (0–3D): synthesis, performance, and applications. <em>Chemosphere</em>, 355, 141838.</li>
+
+      <li><strong>2023</strong> – Sustainable wastewater treatment using magnetic nanohybrids. <em>Nanobiohybrids for Advanced Wastewater Treatment and Energy Recovery</em>, 113.</li>
+
+      <li><strong>2023</strong> – Growth kinetics of crumb-like structure formation on SnO₂ nanowires during direct oxidation. <em>Heliyon</em>, 9(10).</li>
+
+      <li><strong>2022</strong> – Flower-like NiCo₂O₄ nanoflake on carbon nanolayer for high-performance glucose biosensor. <em>Materials Today Chemistry</em>, 26, 101156.</li>
+
+      <li><strong>2022</strong> – Electrocatalytic detection of diphenylamine in fruit samples using Cu@ nanoporous carbon modified sensor. <em>Chemosphere</em>, 292, 133400.</li>
+
+      <li><strong>2022</strong> – Tailoring InSb nanowires for high thermoelectric performance using AAO template-assisted die casting. <em>Nanomaterials</em>, 12(12), 2032.</li>
+
+      <li><strong>2021</strong> – Designing hybrid barium tungstate on functionalized carbon black for low-potential detection of promethazine hydrochloride. <em>Composites Part B</em>, 215, 108789.</li>
+
+      <li><strong>2021</strong> – Effect of MoS₂ solution on reducing wall thickness of ZnO nanotubes for enhanced hydrogen sensing. <em>Journal of Alloys and Compounds</em>, 854, 157102.</li>
+
+      <li><strong>2021</strong> – Size-controllable zinc oxide nanowires fabricated via die-casting and oxidation. <em>Journal of Alloys and Compounds</em>, 861, 157964.</li>
+
+      <li><strong>2021</strong> – Ultrasonic-assisted synthesis of nickel tungstate nanoparticles on PEDOT:PSS for electrochemical detection. <em>Materials Today Communications</em>, 26, 101833.</li>
+
+      <li><strong>2020</strong> – Sonochemical synthesis of nickel–manganous oxide nanocrumbs on reduced graphene oxide for metronidazole detection. <em>Ultrasonics Sonochemistry</em>, 68, 105176.</li>
+
+      <li><strong>2020</strong> – Intermetallic Cu₂Sb nanoparticles for electrocatalytic oxidation of sulphadiazine. <em>ACS Sustainable Chemistry & Engineering</em>, 8(48), 17718–17726.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your-email@domain.com</p>
+    <p>Google Scholar, ResearchGate, LinkedIn links can be added here.</p>
+  </section>
+
+  <footer>
+    © 2025 Dr. Vivekanandan A.K — All Rights Reserved
+  </footer>
+
+</body>
+</html>

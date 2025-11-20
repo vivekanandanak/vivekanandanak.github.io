@@ -3,151 +3,906 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Vivekanandan A.K – Materials Scientist</title>
+  <title>Vivekanandan A K – Materials Scientist & Aerospace Materials</title>
+
+  <!--
+    Personal portfolio of Dr. Vivekanandan A K
+    Tech stack: Static HTML + CSS + minimal JS
+    Hosting target: GitHub Pages
+    To update:
+      - profile image: profile.png (in repo root)
+      - CV file: DRVIVEK_profile.pdf (in repo root)
+      - publications & projects: edit the relevant <li> blocks
+  -->
+
   <style>
+    :root {
+      --bg: #f8fafc;
+      --bg-soft: #e5edff;
+      --card: #ffffff;
+      --primary: #4f46e5;
+      --primary-soft: #e0e7ff;
+      --accent: #10b981;
+      --text-main: #111827;
+      --text-soft: #4b5563;
+      --border-soft: #e5e7eb;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.15);
+      --radius-lg: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-      line-height: 1.6;
+      font-family: Georgia, "Times New Roman", serif;
+      background: radial-gradient(circle at top, #eef2ff 0, #f8fafc 45%, #f1f5f9 100%);
+      color: var(--text-main);
     }
-    header {
-      background: #1a237e;
-      color: white;
-      padding: 50px 20px;
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top navigation */
+
+    .nav-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(248, 250, 252, 0.88);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1px solid var(--border-soft);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .nav-search input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: inherit;
+      min-width: 120px;
+    }
+
+    /* Layout */
+
+    .page {
+      max-width: 1120px;
+      margin: 24px auto 60px;
+      padding: 0 20px 40px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 28px 26px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      margin-top: 0;
+      margin-bottom: 22px;
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    /* Hero section */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar-wrap {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(from 180deg, #4f46e5, #22c55e, #0ea5e9, #4f46e5);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.4);
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #0b1120;
+    }
+
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-name {
+      font-size: 28px;
+      margin: 4px 0 0;
+    }
+
+    .hero-tagline {
+      font-size: 14px;
+      color: var(--text-soft);
       text-align: center;
+      max-width: 260px;
     }
-    header h1 {
-      font-size: 38px;
+
+    .hero-right h1 {
+      font-size: 30px;
+      margin: 4px 0 6px;
+    }
+
+    .hero-right p {
       margin: 0;
+      color: var(--text-soft);
+      font-size: 15px;
     }
-    header p {
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      background: var(--primary-soft);
+      color: #1e293b;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid rgba(129, 140, 248, 0.5);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      background: #eef2ff;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .metric span {
+      display: block;
+    }
+
+    .metric-number {
       font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .metric-label {
+      color: #4b5563;
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--primary);
+      border-color: rgba(129, 140, 248, 0.7);
+    }
+
+    .btn:hover {
+      filter: brightness(0.97);
+      text-decoration: none;
+    }
+
+    /* Two-column layouts for sections */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
+      gap: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e5f6ff;
+      color: #0369a1;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .pill.green {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .pill.purple {
+      background: #eee5ff;
+      color: #6d28d9;
+    }
+
+    .timeline {
+      border-left: 2px solid #e5e7eb;
+      padding-left: 16px;
       margin-top: 10px;
     }
-    nav {
-      background: #283593;
-      padding: 12px;
+
+    .timeline-item {
+      margin-bottom: 14px;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .timeline-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .pub-list li {
+      margin-bottom: 10px;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .gallery-item {
+      height: 120px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #e0f2fe, #f9fafb);
+      border: 1px dashed #bfdbfe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1d4ed8;
+      font-size: 13px;
       text-align: center;
+      padding: 10px;
     }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
+      gap: 18px;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
+
+    .contact-form label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 13px;
+      margin-bottom: 10px;
+      resize: vertical;
     }
-    h2 {
-      color: #1a237e;
-      margin-top: 0;
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
     }
-    ul {
-      margin-left: 20px;
+
+    .social-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      font-size: 12px;
+      color: #1d4ed8;
     }
+
     footer {
       text-align: center;
-      padding: 20px;
-      background: #1a237e;
-      color: white;
-      margin-top: 50px;
+      padding: 16px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* Responsive tweaks */
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right h1 {
+        font-size: 24px;
+      }
+      .page {
+        margin-top: 16px;
+      }
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-left {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Dr. Vivekanandan A.K</h1>
-   <img src="profile.png" alt="Profile Photo"
-     style="width:180px; height:180px; border-radius:50%; margin-top:20px; border:4px solid white;">
-    <p>Materials Scientist · Nanowire Fabrication · AAO · HEA · Electrochemical Sensors<br>
-    Postdoctoral Research Fellow · National Tsing Hua University, Taiwan</p>
-  </header>
+  <!-- Navigation -->
+  <div class="nav-wrapper">
+    <div class="nav">
+      <div class="nav-left">VIVEKANANDAN AK</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-search">
+        🔍
+        <input id="site-search" type="text" placeholder="Search section…" />
+      </div>
+    </div>
+  </div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main class="page">
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Postdoctoral Research Fellow in the Department of Materials Science at
-      National Tsing Hua University (NTHU), Taiwan. My expertise lies in AAO-templated
-      nanowire fabrication, Zn/ZnO oxidation mechanisms, electrochemical sensing systems,
-      and high-entropy alloy processing using die-casting and DLP additive manufacturing.
-    </p>
-    <p>
-      With a dual background in Aeronautical Engineering (B.E., M.Tech) and a Ph.D.
-      in Mechanical Engineering (Nanomaterials), my research bridges advanced materials
-      science with aerospace and industrial applications. I have published multiple
-      high-impact articles in journals such as <em>Chemosphere</em>, <em>Ultrasonics Sonochemistry</em>,
-      <em>ACS Sustainable Chemistry & Engineering</em>, and <em>Journal of Alloys and Compounds</em>.
-    </p>
-  </section>
+    <!-- HOME / HERO -->
+    <section id="home" class="card">
+      <div class="hero">
+        <div class="hero-left">
+          <div class="avatar-wrap">
+            <div class="avatar-inner">
+              <!-- profile.png should be in repository root -->
+              <img src="profile.png" alt="Photo of Vivekanandan A K">
+            </div>
+          </div>
+          <div class="hero-name">Vivekanandan A K</div>
+          <div class="hero-tagline">
+            Materials Scientist · Nanowire Fabrication · AAO · HEA · Electrochemical Sensors
+          </div>
+        </div>
 
-  <section id="research">
-    <h2>Research Areas</h2>
-    <ul>
-      <li>AAO Template-Assisted Nanowire Fabrication</li>
-      <li>Zn/ZnO Nanowire Thermal Oxidation Mechanisms</li>
-      <li>High Entropy Alloys & DLP-Based Sintering</li>
-      <li>Electrochemical Sensors for Agrochemical Detection</li>
-      <li>SEM/TEM/XRD Structural Characterization</li>
-      <li>Aircraft Structures & Composite Materials</li>
-    </ul>
-  </section>
+        <div class="hero-right">
+          <h1>Materials & Aerospace Researcher</h1>
+          <p>
+            Aerospace materials specialist and nanotechnology researcher with 11+ years of academic
+            and research experience across India and Taiwan, focusing on nanofabrication, ultrasonic-assisted
+            manufacturing, and advanced material characterization for aerospace and energy applications.
+          </p>
 
-  <section id="publications">
-    <h2>All Publications</h2>
-    <ul>
-      <li><strong>2025</strong> – High-performance electrochemical sensors with SnBi₂O₃/Graphene oxide nanocomposite for selective antibiotic detection. <em>Journal of the Taiwan Institute of Chemical Engineers</em>, 171, 106033.</li>
+          <div class="hero-highlights">
+            <span class="chip">Aerospace Materials & Nanotechnology</span>
+            <span class="chip">AAO-templated Nanowires</span>
+            <span class="chip">Ultrasonic-Assisted Manufacturing</span>
+          </div>
 
-      <li><strong>2024</strong> – Progress and Perspective in harnessing MXene–carbon-based composites (0–3D): synthesis, performance, and applications. <em>Chemosphere</em>, 355, 141838.</li>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-number">199+</span>
+              <span class="metric-label">Citations</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">h-index 8</span>
+              <span class="metric-label">11+ Q1 journal papers</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">11+ yrs</span>
+              <span class="metric-label">Academia & Research</span>
+            </div>
+          </div>
 
-      <li><strong>2023</strong> – Sustainable wastewater treatment using magnetic nanohybrids. <em>Nanobiohybrids for Advanced Wastewater Treatment and Energy Recovery</em>, 113.</li>
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Contact</a>
+            <a href="DRVIVEK_profile.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+              Download CV
+            </a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+          </div>
 
-      <li><strong>2023</strong> – Growth kinetics of crumb-like structure formation on SnO₂ nanowires during direct oxidation. <em>Heliyon</em>, 9(10).</li>
+          <div class="social-row" style="margin-top:14px;">
+            <!-- Replace # with your real profile links -->
+            <a class="social-pill" href="https://scholar.google.com.tw/citations?user=urPd1vwAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <a class="social-pill" href="https://linkedin.com/in/vivekanandan-ak" target="_blank">LinkedIn</a>
+            <a class="social-pill" href="#" target="_blank">ResearchGate</a>
+            <a class="social-pill" href="#" target="_blank">ORCID</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <li><strong>2022</strong> – Flower-like NiCo₂O₄ nanoflake on carbon nanolayer for high-performance glucose biosensor. <em>Materials Today Chemistry</em>, 26, 101156.</li>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="card">
+        <h2 class="section-title">About</h2>
+        <p class="section-subtitle">
+          Formal, minimal overview of your profile and academic journey.
+        </p>
 
-      <li><strong>2022</strong> – Electrocatalytic detection of diphenylamine in fruit samples using Cu@ nanoporous carbon modified sensor. <em>Chemosphere</em>, 292, 133400.</li>
+        <div class="grid-2">
+          <div>
+            <p>
+              I am a materials scientist and aerospace materials specialist with a Ph.D. in Mechanical
+              Engineering (Nanomaterials) and extensive post-doctoral experience in Taiwan. My work
+              focuses on nano-structured transition metal oxides, AAO-templated nanowires, ultrasonic-
+              assisted processing, and thermoelectric and sensing devices for aerospace and energy systems.
+            </p>
+            <p>
+              I enjoy designing experiments that connect microstructure to performance—linking
+              fabrication routes, phase transformation and interface behavior with functional properties
+              such as sensing, corrosion resistance and energy conversion efficiency.
+            </p>
+          </div>
+          <div>
+            <span class="pill purple">Academic Journey Snapshot</span>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-title">Postdoctoral Research – Materials Science</div>
+                <div class="timeline-meta">National Tsing Hua University & NYCU, Taiwan</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">Ph.D. – Mechanical Engineering (Nanomaterials)</div>
+                <div class="timeline-meta">National Taiwan University of Science and Technology</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-title">M.Tech & B.E. – Aeronautical Engineering</div>
+                <div class="timeline-meta">Hindustan University & Anna University, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <li><strong>2022</strong> – Tailoring InSb nanowires for high thermoelectric performance using AAO template-assisted die casting. <em>Nanomaterials</em>, 12(12), 2032.</li>
+      </div>
+    </section>
 
-      <li><strong>2021</strong> – Designing hybrid barium tungstate on functionalized carbon black for low-potential detection of promethazine hydrochloride. <em>Composites Part B</em>, 215, 108789.</li>
+    <!-- RESEARCH -->
+    <section id="research">
+      <div class="card">
+        <h2 class="section-title">Research Areas</h2>
+        <p class="section-subtitle">
+          Focused on bridging nanomaterials, ultrasonic processing and aerospace applications.
+        </p>
 
-      <li><strong>2021</strong> – Effect of MoS₂ solution on reducing wall thickness of ZnO nanotubes for enhanced hydrogen sensing. <em>Journal of Alloys and Compounds</em>, 854, 157102.</li>
+        <div class="grid-2">
+          <div>
+            <span class="pill">Core Topics</span>
+            <ul>
+              <li>AAO template-assisted nanowire and nanotube fabrication</li>
+              <li>Thermal oxidation mechanisms in Zn/ZnO and SnO₂ nanowires</li>
+              <li>High-entropy alloys and thermoelectric materials for aerospace systems</li>
+              <li>Electrochemical sensors for agrochemical and environmental monitoring</li>
+              <li>Non-linear ultrasonics, cavitation and acoustic field modelling</li>
+              <li>Aerospace structures: fatigue, composite materials and corrosion protection</li>
+            </ul>
+          </div>
+          <div>
+            <span class="pill green">Methods & Tools</span>
+            <div class="tag-row">
+              <span class="tag">SEM / FE-SEM</span>
+              <span class="tag">XRD</span>
+              <span class="tag">Raman</span>
+              <span class="tag">TEM</span>
+              <span class="tag">Ultrasonic tool design</span>
+              <span class="tag">AAO / PEO / Coatings</span>
+              <span class="tag">ANSYS</span>
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Finite Element Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <li><strong>2021</strong> – Size-controllable zinc oxide nanowires fabricated via die-casting and oxidation. <em>Journal of Alloys and Compounds</em>, 861, 157964.</li>
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="card">
+        <h2 class="section-title">Selected Publications</h2>
+        <p class="section-subtitle">
+          Representative peer-reviewed works. Full, up-to-date list available on Google Scholar.
+        </p>
 
-      <li><strong>2021</strong> – Ultrasonic-assisted synthesis of nickel tungstate nanoparticles on PEDOT:PSS for electrochemical detection. <em>Materials Today Communications</em>, 26, 101833.</li>
+        <ul class="pub-list">
+          <li>
+            <div class="pub-title">
+              High-performance electrochemical sensors using Sn-Bi₂O₃ nanoparticles on graphene oxide nanocomposite
+              for selective antibiotic detection.
+            </div>
+            <div class="pub-meta">
+              Journal of the Taiwan Institute of Chemical Engineers, 2025.
+            </div>
+          </li>
+          <li>
+            <div class="pub-title">
+              Progress and perspective in harnessing MXene–carbon-based composites (0–3D): synthesis, performance, and applications.
+            </div>
+            <div class="pub-meta">
+              Chemosphere, 2024.
+            </div>
+          </li>
+          <li>
+            <div class="pub-title">
+              Growth kinetics of crumb-like structure formation on SnO₂ nanowires during direct oxidation.
+            </div>
+            <div class="pub-meta">
+              Heliyon, 2023.
+            </div>
+          </li>
+          <li>
+            <div class="pub-title">
+              Tailoring InSb nanowires for high thermoelectric performance using AAO template-assisted die-casting process.
+            </div>
+            <div class="pub-meta">
+              Nanomaterials, 2022.
+            </div>
+          </li>
+          <li>
+            <div class="pub-title">
+              Size-controllable ZnO nanowires fabricated via die-casting and oxidation.
+            </div>
+            <div class="pub-meta">
+              Journal of Alloys and Compounds, 2021.
+            </div>
+          </li>
+          <li>
+            <div class="pub-title">
+              Sonochemical synthesis of nickel–manganous oxide nanocrumbs on partially reduced graphene oxide
+              for efficient electrochemical detection of metronidazole.
+            </div>
+            <div class="pub-meta">
+              Ultrasonics Sonochemistry, 2020.
+            </div>
+          </li>
+        </ul>
 
-      <li><strong>2020</strong> – Sonochemical synthesis of nickel–manganous oxide nanocrumbs on reduced graphene oxide for metronidazole detection. <em>Ultrasonics Sonochemistry</em>, 68, 105176.</li>
+        <p style="font-size:13px; margin-top:18px;">
+          → See complete publication list on
+          <a href="https://scholar.google.com.tw/citations?user=urPd1vwAAAAJ&hl=en" target="_blank">Google Scholar</a>.
+        </p>
+      </div>
+    </section>
 
-      <li><strong>2020</strong> – Intermetallic Cu₂Sb nanoparticles for electrocatalytic oxidation of sulphadiazine. <em>ACS Sustainable Chemistry & Engineering</em>, 8(48), 17718–17726.</li>
-    </ul>
-  </section>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="card">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">
+          Ongoing and completed research projects, with focus on aerospace and functional materials.
+        </p>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: vivekak77@gmail.com</p>
-    <p>Google Scholar-https://scholar.google.com.tw/citations?user=urPd1vwAAAAJ&hl=en,  LinkedIn- https://www.linkedin.com/in/dr-vivekanandan-kothandan-a51210165/.</p>
-  </section>
+        <div class="grid-2">
+          <div>
+            <span class="pill">Highlighted Projects</span>
+            <ul>
+              <li><strong>Single Nanowire Thermoelectric Devices</strong> – Design and fabrication of InSb and SnO₂ nanowire-based devices using
+                vacuum die casting and FIB/RIE processing for enhanced thermoelectric performance.</li>
+              <li><strong>Hydrogen Gas Sensing Systems</strong> – Integrated sensing platform based on ZnO nanotubes and crumb-like nanowires
+                for sensitive hydrogen detection.</li>
+              <li><strong>Surface Engineering of Aerospace Aluminium</strong> – PEO/AAO-based treatments for corrosion protection in aggressive
+                environments.</li>
+              <li><strong>Magnetic Foot Hexapod Robot</strong> – Aluminium-joint robot for chimney inspection with servo-driven tripod gait motion.</li>
+            </ul>
+          </div>
+
+          <div>
+            <span class="pill green">Visuals & Media</span>
+            <p style="font-size:13px;">
+              Planned visuals for this section:
+            </p>
+            <ul style="font-size:13px;">
+              <li>Infographic diagrams summarizing AAO–nanowire fabrication routes.</li>
+              <li>Microstructure & phase maps for HEA / thermoelectric systems.</li>
+              <li>Embedded YouTube videos demonstrating device operation or conference talks.</li>
+            </ul>
+            <p style="font-size:13px;">
+              You can later embed a video like this:
+              <code>&lt;iframe src="YOUTUBE_LINK" ...&gt;&lt;/iframe&gt;</code>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching">
+      <div class="card">
+        <h2 class="section-title">Teaching</h2>
+        <p class="section-subtitle">
+          Courses delivered across aeronautical and mechanical engineering programs.
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <span class="pill">Core Courses</span>
+            <ul>
+              <li>Aircraft Structures</li>
+              <li>Strength of Materials</li>
+              <li>Composite Materials</li>
+              <li>Finite Element Methods & Theory of Elasticity</li>
+              <li>Thermodynamics & Thermal Systems</li>
+              <li>Avionics and Vibration</li>
+            </ul>
+          </div>
+          <div>
+            <span class="pill purple">Teaching Philosophy</span>
+            <p style="font-size:14px;">
+              I emphasise physical intuition, failure analysis and microstructure–property relationships,
+              encouraging students to connect classical mechanics and materials science with real aerospace
+              applications and emerging technologies such as nanomaterials, sensors, and additive
+              manufacturing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <div class="card">
+        <h2 class="section-title">Achievements & Recognition</h2>
+        <p class="section-subtitle">
+          Awards, grants and invited talks.
+        </p>
+
+        <ul>
+          <li>Young Researcher of the Year (2020) – Taiwan, for excellence in research and teaching.</li>
+          <li>Recipient of full Ph.D. scholarship at National Taiwan University of Science and Technology.</li>
+          <li>Active reviewer for journals including Journal of Alloys and Compounds, Sensors & Actuators B and Electrochimica Acta.</li>
+          <li>Invited speaker on topics such as thermoelectric materials, smart materials, and ultrasonic-assisted manufacturing at multiple engineering institutes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="card">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">
+          Space reserved for research images, lab photos and conference moments.
+        </p>
+        <div class="gallery-grid">
+          <div class="gallery-item">Add SEM / TEM micrographs</div>
+          <div class="gallery-item">AAO templates & nanowires</div>
+          <div class="gallery-item">Conference / invited talks</div>
+          <div class="gallery-item">Lab / project snapshots</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="card">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          For research collaboration, industrial projects or academic opportunities.
+        </p>
+
+        <div class="contact-grid">
+          <div>
+            <form class="contact-form" action="mailto:vivekak77@gmail.com" method="post" enctype="text/plain">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required>
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+
+              <button class="btn" type="submit">Send Email</button>
+            </form>
+          </div>
+
+          <div>
+            <span class="pill">Direct</span>
+            <p style="font-size:14px;">
+              📧 <a href="mailto:vivekak77@gmail.com">vivekak77@gmail.com</a><br>
+              📞 +91-7708969010
+            </p>
+
+            <span class="pill green">Networks</span>
+            <div class="social-row">
+              <a class="social-pill" href="https://scholar.google.com.tw/citations?user=urPd1vwAAAAJ&hl=en" target="_blank">Google Scholar</a>
+              <a class="social-pill" href="https://linkedin.com/in/vivekanandan-ak" target="_blank">LinkedIn</a>
+              <a class="social-pill" href="#" target="_blank">ResearchGate</a>
+              <a class="social-pill" href="#" target="_blank">ORCID</a>
+            </div>
+
+            <p style="font-size:11px; margin-top:16px; color:#9ca3af;">
+              <!-- Google Analytics placeholder –
+                   replace G-XXXXXXX with your real Measurement ID if needed -->
+              Analytics can be added here using your Google Analytics tag.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    © 2025 Dr. Vivekanandan A.K — All Rights Reserved
+    © <span id="year"></span> Vivekanandan A K · Built with HTML/CSS · Hosted on GitHub Pages
   </footer>
 
+  <script>
+    // Simple footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Basic section search: scrolls to section whose id includes the query
+    const searchInput = document.getElementById("site-search");
+    const sectionIds = [
+      "home", "about", "research", "publications", "projects",
+      "teaching", "achievements", "gallery", "contact"
+    ];
+
+    searchInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const query = this.value.toLowerCase().trim();
+        if (!query) return;
+        const match = sectionIds.find(id => id.includes(query));
+        if (match) {
+          document.getElementById(match).scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  </script>
 </body>
 </html>

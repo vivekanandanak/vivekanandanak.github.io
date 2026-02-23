@@ -66,7 +66,7 @@
 
   <header>
     <h1>Dr. Vivekanandan A.K</h1>
-    <p>Materials Scientist · Nanowire Fabrication · AAO · HEA · Additive Manufacturing · Multifuctional sensors<br>
+    <p>Materials Scientist · Nanowire Fabrication · AAO · HEA · Additive Manufacturing · Multifunctional sensors<br>
     Postdoctoral Research Fellow · National Tsing Hua University, Taiwan</p>
   </header>
 
